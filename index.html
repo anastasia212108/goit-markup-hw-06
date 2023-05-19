@@ -665,24 +665,24 @@
               placeholder="Text input"
             ></textarea>
           </div>
-          <label class="modal_checkbox" for="checkbox_modal"></label>
-          <div class="check">
-            <div class="modal_checked">
-              <input
-                class="modal_checkbox_input"
-                type="checkbox"
-                name="modal_agreement"
-                id="checkbox_modal"
-              />
-              <svg class="modal_checkbox_icon" width="10" height="8">
-                <use href="./images/icons.svg#checkbox"></use>
-              </svg>
-            </div>
+
+          <label class="modal_checkbox" for="checkbox_modal">
+            <input
+              class="modal_checkbox_input visually-hidden"
+              type="checkbox"
+              name="modal_agreement"
+              id="checkbox_modal"
+            />
+            <svg class="modal_checkbox_icon" width="16" height="16">
+              <use class="unchecked" href="./images/icons.svg#unchecked"></use>
+              <use class="checked" href="./images/icons.svg#checked"></use>
+            </svg>
+
             <span class="modal_checkbox_text"
               >I accept the terms and conditions of the
               <a href="" class="modal_checkbox_link">Privacy Policy</a></span
             >
-          </div>
+          </label>
           <button class="modal-btn btn">Send</button>
         </form>
         <button class="modal-close-btn" type="button" data-modal-close>

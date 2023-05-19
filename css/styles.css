@@ -725,8 +725,8 @@ Modal window
   left: calc(50%);
   transform: translate(-50%, -50%);
   width: 408px;
-  min-height: 584px;
-  padding: 24px;
+  height: 584px;
+  padding: 72px 24px 24px;
   background-color: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -766,11 +766,8 @@ Modal window
 Form
 ==============================*/
 .modal-text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 48px;
-  margin-bottom: 24px;
+  text-align: center;
+  margin-bottom: 16px;
   color: var(--color-navy-blue);
 }
 label {
@@ -791,7 +788,7 @@ label {
   margin-bottom: 4px;
 }
 .registration_form {
-  margin: 0;
+  margin-bottom: 16px;
 }
 .registration-form-wrapper {
   position: relative;
@@ -829,13 +826,13 @@ label {
 .modal_comment_text {
   color: var(--color-navy-blue-modal);
   letter-spacing: 0.04em;
-  margin-bottom: 4px;
+
   width: 100%;
   height: 120px;
   padding: 8px 16px;
   outline: transparent;
   transition: border-color var(--anim);
-  margin-bottom: 16px;
+
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
 }
@@ -851,6 +848,7 @@ textarea {
   align-items: center;
   justify-content: center;
   gap: 8px;
+  margin-bottom: 24px;
   font-family: var(--primary-font);
   font-style: normal;
   font-weight: 400;
@@ -859,32 +857,16 @@ textarea {
   letter-spacing: 0.04em;
   color: var(--color-light-slate);
 }
-.check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-bottom: 24px;
-}
-.modal_checked {
-  display: flex;
-  align-items: center;
 
-  position: relative;
-}
 .modal_checkbox_input {
   appearance: none;
-  display: block;
+
   width: 16px;
   height: 16px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 2px;
 }
 .modal_checkbox_icon {
-  position: absolute;
-
-  transform: translate(25%, 5%);
-  fill: transparent;
 }
 .modal_checkbox_input:focus-visible {
   outline-color: var(--color-ocean);
@@ -894,8 +876,19 @@ textarea {
   background-color: var(--color-ocean);
   border: var(--color-ocean);
 }
-.modal_checkbox_input:checked + .modal_checkbox_icon {
-  fill: var(--color-cloud);
+.unchecked {
+  opacity: 1;
+  transition: var(--anim);
+}
+.checked {
+  opacity: 0;
+  transition: var(--anim);
+}
+.modal_checkbox_input:checked + .modal_checkbox_icon > .unchecked {
+  opacity: 0;
+}
+.modal_checkbox_input:checked + .modal_checkbox_icon > .checked {
+  opacity: 1;
 }
 .modal_checkbox_text {
   user-select: none;
